@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>創作者免費登記｜ThreadsKOL 台灣</title>
+<meta name="description" content="登記你的 Threads 帳號、平均瀏覽數與報價。免費、不抽佣、聯絡方式不公開。">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">ThreadsKOL <span>台灣</span></a>
+  <ul><li><a href="./">首頁</a></li><li><a href="./brand.html">我是品牌</a></li><li><a class="btn" href="./register.html">免費登記</a></li></ul>
+</div></header>
+
+<main class="wrap form" style="padding-block:48px 72px">
+  <div class="eyebrow">Creator Registration</div>
+  <h1>創作者免費登記</h1>
+  <p class="lead">兩分鐘填完。審核通過後你會進入品牌可見的名單，聯絡方式在有合作案且你同意後才會交出。</p>
+  <div class="note">怎麼看「平均瀏覽數」：打開你的 Threads 主頁，把最近 20 篇貼文左下角的瀏覽數加起來除以 20。不用很準，審核時我們會一起對照。</div>
+
+  <form name="creator" method="POST" action="./thanks.html" data-netlify="true" netlify-honeypot="website">
+    <input type="hidden" name="form-name" value="creator">
+    <p class="hidden"><label>網站 <input name="website"></label></p>
+
+    <fieldset><legend>基本資料</legend>
+      <label>Threads 顯示名稱 <input type="text" name="name" required placeholder="例：阿明的 AI 筆記"></label>
+      <label>Threads 主頁連結 <input type="url" name="threads_url" required placeholder="https://www.threads.com/@your_id" pattern="https?://(www\.)?threads\.(com|net)/@.*"><span class="hint">請貼完整網址，開頭是 threads.com/@ 或 threads.net/@</span></label>
+      <div class="row">
+        <label>粉絲數 <input type="number" name="followers" min="0" required placeholder="例：8500"></label>
+        <label>近 20 篇平均瀏覽數 <input type="number" name="avg_views" min="0" required placeholder="例：32000"></label>
+      </div>
+      <label>最高單篇瀏覽數 <span class="opt">（選填）</span><input type="number" name="max_views" min="0" placeholder="例：1200000"></label>
+    </fieldset>
+
+    <fieldset><legend>內容領域（可複選）</legend>
+      <div class="checks">
+        <label><input type="checkbox" name="topics" value="美食餐飲">美食 / 餐飲</label>
+        <label><input type="checkbox" name="topics" value="旅遊住宿">旅遊 / 住宿</label>
+        <label><input type="checkbox" name="topics" value="AI科技">AI / 科技工具</label>
+        <label><input type="checkbox" name="topics" value="職場成長">職場 / 自我成長</label>
+        <label><input type="checkbox" name="topics" value="理財投資">理財 / 投資</label>
+        <label><input type="checkbox" name="topics" value="親子育兒">親子 / 育兒</label>
+        <label><input type="checkbox" name="topics" value="美妝穿搭">美妝 / 穿搭</label>
+        <label><input type="checkbox" name="topics" value="健身健康">健身 / 健康</label>
+        <label><input type="checkbox" name="topics" value="寵物">寵物</label>
+        <label><input type="checkbox" name="topics" value="居家生活">居家 / 生活好物</label>
+        <label><input type="checkbox" name="topics" value="教育語言">教育 / 語言</label>
+        <label><input type="checkbox" name="topics" value="時事迷因">時事觀點 / 迷因</label>
+      </div>
+      <label>其他領域或一句話介紹你的帳號 <span class="opt">（選填）</span><input type="text" name="topic_other" placeholder="例：專講台灣人移居馬來西亞的生活觀察"></label>
+    </fieldset>
+
+    <fieldset><legend>報價（新台幣，填你願意接的最低價）</legend>
+      <div class="row">
+        <label>單篇貼文 <input type="number" name="price_post" min="0" required placeholder="例：3000"><span class="hint">一則含圖或純文字的業配貼文</span></label>
+        <label>串文（3 則以上） <input type="number" name="price_thread" min="0" placeholder="例：6000"><span class="hint">主文加接續的自回覆，比單篇完整</span></label>
+      </div>
+      <div class="row">
+        <label>引用或轉發品牌貼文 <input type="number" name="price_repost" min="0" placeholder="例：1500"></label>
+        <label>其他方案 <span class="opt">（選填）</span><input type="text" name="price_other" placeholder="例：一個月 4 篇 10000"></label>
+      </div>
+    </fieldset>
+
+    <fieldset><legend>可以一起合作的平台（可複選）</legend>
+      <div class="checks">
+        <label><input type="checkbox" name="platforms" value="Instagram">Instagram</label>
+        <label><input type="checkbox" name="platforms" value="YouTube">YouTube</label>
+        <label><input type="checkbox" name="platforms" value="TikTok">TikTok</label>
+        <label><input type="checkbox" name="platforms" value="Facebook">Facebook</label>
+        <label><input type="checkbox" name="platforms" value="LINE社群">LINE 社群</label>
+        <label><input type="checkbox" name="platforms" value="Podcast">Podcast</label>
+        <label><input type="checkbox" name="platforms" value="電子報">電子報</label>
+      </div>
+      <label>其他平台連結 <span class="opt">（選填）</span><input type="text" name="platform_links" placeholder="貼上 IG 或 YouTube 網址"></label>
+    </fieldset>
+
+    <fieldset><legend>聯絡方式（不公開，只在有合作案時使用）</legend>
+      <label>Email <input type="email" name="email" required placeholder="you@example.com"></label>
+      <div class="row">
+        <label>LINE ID <span class="opt">（選填）</span><input type="text" name="line_id"></label>
+        <label>Instagram 帳號 <span class="opt">（選填）</span><input type="text" name="ig" placeholder="@your_ig"></label>
+      </div>
+      <label>不接的品牌類型或備註 <span class="opt">（選填）</span><textarea name="notes" placeholder="例：不接博弈、不接保健食品；十月檔期已滿"></textarea></label>
+    </fieldset>
+
+    <label class="agree"><input type="checkbox" name="agree" value="yes" required><span>我確認以上資料屬實，同意 ThreadsKOL 在有合作案時把我的帳號、領域、瀏覽量級與報價區間提供給品牌，聯絡方式僅在我同意後交出。</span></label>
+    <button class="btn big" type="submit">送出登記</button>
+  </form>
+</main>
+
+<footer><div class="wrap"><p class="fine">© 2026 ThreadsKOL 台灣。Threads 是 Meta Platforms, Inc. 的商標，本站與其無隸屬關係。</p></div></footer>
+<script src="form.js"></script>
+</body>
+</html>

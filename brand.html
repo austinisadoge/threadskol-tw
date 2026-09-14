@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>品牌合作諮詢｜ThreadsKOL 台灣</title>
+<meta name="description" content="告訴我們你的產品、目標受眾與預算，我們依瀏覽量級與領域推薦合適的台灣 Threads 創作者。">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">ThreadsKOL <span>台灣</span></a>
+  <ul><li><a href="./">首頁</a></li><li><a href="./register.html">我是創作者</a></li><li><a class="btn" href="./brand.html">品牌諮詢</a></li></ul>
+</div></header>
+
+<main class="wrap form" style="padding-block:48px 72px">
+  <div class="eyebrow">For Brands</div>
+  <h1>品牌合作諮詢</h1>
+  <p class="lead">留下需求，我們在 1 至 3 個工作天內回你一份候選名單：帳號、領域、近期平均瀏覽、報價區間。名單免費，確定合作再談服務費。</p>
+
+  <div class="grid" style="margin-bottom:28px">
+    <div class="card"><h3>用瀏覽數挑人</h3><p>每個帳號都附近 20 篇平均瀏覽與最高單篇，不是粉絲數。</p></div>
+    <div class="card"><h3>報價透明</h3><p>創作者自己填的價，原封不動給你看。服務費另計，不藏在報價裡。</p></div>
+    <div class="card"><h3>我們幫你談</h3><p>聯繫、檔期、內容方向、發布後數據回收，一個窗口處理。</p></div>
+  </div>
+
+  <form name="brand" method="POST" action="./thanks.html" data-netlify="true" netlify-honeypot="website">
+    <input type="hidden" name="form-name" value="brand">
+    <p class="hidden"><label>網站 <input name="website"></label></p>
+
+    <fieldset><legend>你是誰</legend>
+      <div class="row">
+        <label>品牌或公司名稱 <input type="text" name="company" required></label>
+        <label>聯絡人 <input type="text" name="contact" required></label>
+      </div>
+      <div class="row">
+        <label>Email <input type="email" name="email" required></label>
+        <label>LINE ID 或電話 <span class="opt">（選填）</span><input type="text" name="phone"></label>
+      </div>
+      <label>你的身分
+        <select name="role" required>
+          <option value="">請選擇</option>
+          <option>品牌方（自家產品）</option>
+          <option>行銷公司 / 代理商</option>
+          <option>新創 / 個人工作室</option>
+          <option>其他</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset><legend>這次要推什麼</legend>
+      <label>產品或服務簡介 <textarea name="product" required placeholder="例：台北的手沖咖啡訂閱制，客單 NT$ 900／月，主打上班族"></textarea></label>
+      <label>希望的創作者領域（可複選）</label>
+      <div class="checks">
+        <label><input type="checkbox" name="topics" value="美食餐飲">美食 / 餐飲</label>
+        <label><input type="checkbox" name="topics" value="旅遊住宿">旅遊 / 住宿</label>
+        <label><input type="checkbox" name="topics" value="AI科技">AI / 科技工具</label>
+        <label><input type="checkbox" name="topics" value="職場成長">職場 / 自我成長</label>
+        <label><input type="checkbox" name="topics" value="理財投資">理財 / 投資</label>
+        <label><input type="checkbox" name="topics" value="親子育兒">親子 / 育兒</label>
+        <label><input type="checkbox" name="topics" value="美妝穿搭">美妝 / 穿搭</label>
+        <label><input type="checkbox" name="topics" value="健身健康">健身 / 健康</label>
+        <label><input type="checkbox" name="topics" value="寵物">寵物</label>
+        <label><input type="checkbox" name="topics" value="居家生活">居家 / 生活好物</label>
+        <label><input type="checkbox" name="topics" value="教育語言">教育 / 語言</label>
+        <label><input type="checkbox" name="topics" value="時事迷因">時事觀點 / 迷因</label>
+      </div>
+      <div class="row">
+        <label>總預算（新台幣）
+          <select name="budget" required>
+            <option value="">請選擇</option>
+            <option>3 萬以下</option>
+            <option>3 至 10 萬</option>
+            <option>10 至 30 萬</option>
+            <option>30 萬以上</option>
+            <option>還不確定，想先看名單</option>
+          </select>
+        </label>
+        <label>希望上線時間
+          <select name="timeline">
+            <option value="">請選擇</option>
+            <option>兩週內</option>
+            <option>一個月內</option>
+            <option>一到三個月</option>
+            <option>還在規劃</option>
+          </select>
+        </label>
+      </div>
+      <label>合作形式（可複選）</label>
+      <div class="checks">
+        <label><input type="checkbox" name="format" value="單篇貼文">單篇貼文</label>
+        <label><input type="checkbox" name="format" value="串文">串文</label>
+        <label><input type="checkbox" name="format" value="引用轉發">引用轉發</label>
+        <label><input type="checkbox" name="format" value="長期合作">長期合作</label>
+        <label><input type="checkbox" name="format" value="跨平台">加 IG / YouTube</label>
+      </div>
+      <label>其他需求或參考案例 <span class="opt">（選填）</span><textarea name="notes" placeholder="例：想找五個平均瀏覽兩萬以上的帳號，避開有做過競品的"></textarea></label>
+    </fieldset>
+
+    <button class="btn big" type="submit">送出需求</button>
+  </form>
+</main>
+
+<footer><div class="wrap"><p class="fine">© 2026 ThreadsKOL 台灣。Threads 是 Meta Platforms, Inc. 的商標，本站與其無隸屬關係。</p></div></footer>
+<script src="form.js"></script>
+</body>
+</html>
