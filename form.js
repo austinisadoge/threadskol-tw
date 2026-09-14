@@ -14,7 +14,7 @@
         if (res.ok && location.hostname.endsWith('netlify.app')) { location.href = form.getAttribute('action') || '/thanks.html'; return; }
         throw new Error('no backend');
       } catch (_) {
-        const lines = [`【${form.name === 'creator' ? 'ThreadsKOL 創作者登記' : 'ThreadsKOL 品牌需求'}】`];
+        const lines = [`【${form.getAttribute('name') === 'creator' ? 'ThreadsKOL 創作者登記' : 'ThreadsKOL 品牌需求'}】`];
         const seen = {};
         for (const [k, v] of fd.entries()) {
           if (!v || k === 'form-name' || k === 'website' || k === 'agree') continue;
