@@ -22,7 +22,7 @@
 
   <form name="creator" method="POST" action="./thanks.html" data-netlify="true" netlify-honeypot="website">
     <input type="hidden" name="form-name" value="creator">
-    <p class="hidden"><label>網站 <input name="website"></label></p>
+    <p class="hidden" aria-hidden="true"><label>請勿填寫 <input name="website" tabindex="-1" autocomplete="off"></label></p>
 
     <fieldset><legend>基本資料</legend>
       <label>Threads 顯示名稱 <input type="text" name="name" required placeholder="例：阿明的 AI 筆記"></label>
