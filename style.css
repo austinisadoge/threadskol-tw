@@ -83,3 +83,4 @@ textarea{min-height:110px;resize:vertical}
 .agree input{margin-top:5px;width:18px;height:18px;accent-color:var(--accent)}
 .hidden{position:absolute;left:-9999px}
 .note{background:var(--soft);border-radius:var(--r);padding:16px 18px;font-size:14px;color:var(--muted);margin:0 0 24px}
+.platform-links{display:grid;gap:12px;margin-top:14px}.platform-links:empty{display:none}#platformHint{margin-top:12px}[hidden]{display:none!important}

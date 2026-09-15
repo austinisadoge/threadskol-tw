@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>創作者免費登記｜ThreadsKOL 台灣</title>
 <meta name="description" content="登記你的 Threads 帳號、擴散力指數與報價。免費、不抽佣、聯絡方式不公開。">
-<link rel="stylesheet" href="style.css?v=20260915">
+<link rel="stylesheet" href="style.css?v=20260915b">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
 </head>
 <body>
@@ -73,7 +73,35 @@
         <label><input type="checkbox" name="platforms" value="Podcast">Podcast</label>
         <label><input type="checkbox" name="platforms" value="電子報">電子報</label>
       </div>
-      <label>其他平台連結 <span class="opt">（選填）</span><input type="text" name="platform_links" placeholder="貼上 IG 或 YouTube 網址"></label>
+      <div class="platform-links" id="platformLinks"></div>
+      <p class="hint" id="platformHint">勾選平台後，下面會出現對應的連結欄位，每個平台各貼一個網址。</p>
+      <script>
+      (function () {
+        const box = document.getElementById('platformLinks');
+        const hint = document.getElementById('platformHint');
+        const PH = { Instagram: 'https://instagram.com/你的帳號', YouTube: 'https://youtube.com/@你的頻道', TikTok: 'https://tiktok.com/@你的帳號', Facebook: 'https://facebook.com/你的粉專', 'LINE社群': 'LINE 社群邀請連結', Podcast: 'Apple Podcasts 或 Spotify 連結', '電子報': '訂閱頁網址' };
+        document.querySelectorAll('input[name="platforms"]').forEach((cb) => {
+          cb.addEventListener('change', () => {
+            const key = 'link_' + cb.value;
+            const existing = box.querySelector(`[data-for="${cb.value}"]`);
+            if (cb.checked && !existing) {
+              const label = document.createElement('label');
+              label.dataset.for = cb.value;
+              label.append(cb.parentElement.textContent.trim() + ' 連結 ');
+              const opt = document.createElement('span'); opt.className = 'opt'; opt.textContent = '（選填）';
+              const input = document.createElement('input'); input.type = 'text'; input.name = key; input.placeholder = PH[cb.value] || '貼上網址';
+              label.append(opt, input);
+              const order = [...document.querySelectorAll('input[name="platforms"]')].map((x) => x.value);
+              const after = [...box.children].find((el) => order.indexOf(el.dataset.for) > order.indexOf(cb.value));
+              box.insertBefore(label, after || null);
+            } else if (!cb.checked && existing) {
+              existing.remove();
+            }
+            hint.hidden = box.children.length > 0;
+          });
+        });
+      })();
+      </script>
     </fieldset>
 
     <fieldset><legend>聯絡方式（不公開，只在有合作案時使用）</legend>
@@ -91,6 +119,6 @@
 </main>
 
 <footer><div class="wrap"><p class="fine">© 2026 ThreadsKOL 台灣。Threads 是 Meta Platforms, Inc. 的商標，本站與其無隸屬關係。</p></div></footer>
-<script src="form.js?v=20260915"></script>
+<script src="form.js?v=20260915b"></script>
 </body>
 </html>
