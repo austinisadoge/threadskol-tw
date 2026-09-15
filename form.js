@@ -2,6 +2,8 @@
 (function () {
   const HANDLE = '@ai_cpocoder';
   const THREADS_URL = 'https://www.threads.com/@ai_cpocoder';
+  // 收單後端（Vercel 專案 threadskol-api，程式在 ~/threadskol-api）。送不出去時退回「複製後私訊」
+  const ENDPOINT = 'https://threadskol-api.vercel.app/api/submit';
   document.querySelectorAll('form[data-netlify]').forEach((form) => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -10,6 +12,11 @@
       btn.disabled = true; btn.textContent = '送出中…';
       const fd = new FormData(form);
       try {
+        if (ENDPOINT) {
+          const r = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(fd).toString() });
+          if (r.ok) { location.href = form.getAttribute('action') || './thanks.html'; return; }
+          throw new Error('backend ' + r.status);
+        }
         const res = await fetch(location.pathname, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(fd).toString() });
         if (res.ok && location.hostname.endsWith('netlify.app')) { location.href = form.getAttribute('action') || '/thanks.html'; return; }
         throw new Error('no backend');
