@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>創作者免費登記｜ThreadsKOL 台灣</title>
-<meta name="description" content="登記你的 Threads 帳號、平均瀏覽數與報價。免費、不抽佣、聯絡方式不公開。">
+<meta name="description" content="登記你的 Threads 帳號、擴散力指數與報價。免費、不抽佣、聯絡方式不公開。">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
 </head>
@@ -18,7 +18,7 @@
   <div class="eyebrow">Creator Registration</div>
   <h1>創作者免費登記</h1>
   <p class="lead">兩分鐘填完。審核通過後你會進入品牌可見的名單，聯絡方式在有合作案且你同意後才會交出。</p>
-  <div class="note">怎麼看「平均瀏覽數」：打開你的 Threads 主頁，把最近 20 篇貼文左下角的瀏覽數加起來除以 20。不用很準，審核時我們會一起對照。</div>
+  <div class="note">怎麼算「擴散力指數」：打開你的 Threads 主頁，最近 20 篇貼文左下角的瀏覽數加總後除以 20，就是你的指數。不用很準，審核時我們會一起對照。</div>
 
   <form name="creator" method="POST" action="./thanks.html" data-netlify="true" netlify-honeypot="website">
     <input type="hidden" name="form-name" value="creator">
@@ -29,7 +29,7 @@
       <label>Threads 主頁連結 <input type="url" name="threads_url" required placeholder="https://www.threads.com/@your_id" pattern="https?://(www\.)?threads\.(com|net)/@.*"><span class="hint">請貼完整網址，開頭是 threads.com/@ 或 threads.net/@</span></label>
       <div class="row">
         <label>粉絲數 <input type="number" name="followers" min="0" required placeholder="例：8500"></label>
-        <label>近 20 篇平均瀏覽數 <input type="number" name="avg_views" min="0" required placeholder="例：32000"></label>
+        <label>擴散力指數 <span class="opt">（近 20 篇平均瀏覽）</span><input type="number" name="avg_views" min="0" required placeholder="例：32000"></label>
       </div>
       <label>最高單篇瀏覽數 <span class="opt">（選填）</span><input type="number" name="max_views" min="0" placeholder="例：1200000"></label>
     </fieldset>
@@ -85,7 +85,7 @@
       <label>不接的品牌類型或備註 <span class="opt">（選填）</span><textarea name="notes" placeholder="例：不接博弈、不接保健食品；十月檔期已滿"></textarea></label>
     </fieldset>
 
-    <label class="agree"><input type="checkbox" name="agree" value="yes" required><span>我確認以上資料屬實，同意 ThreadsKOL 在有合作案時把我的帳號、領域、瀏覽量級與報價區間提供給品牌，聯絡方式僅在我同意後交出。</span></label>
+    <label class="agree"><input type="checkbox" name="agree" value="yes" required><span>我確認以上資料屬實，同意 ThreadsKOL 在有合作案時把我的帳號、領域、擴散力指數與報價區間提供給品牌，聯絡方式僅在我同意後交出。</span></label>
     <button class="btn big" type="submit">送出登記</button>
   </form>
 </main>
