@@ -121,7 +121,7 @@
  ]
 }
 </script>
-<link rel="stylesheet" href="style.css?v=20260915c">
+<link rel="stylesheet" href="style.css?v=20260918a">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
 </head>
 <body>
@@ -151,6 +151,10 @@
     <li>聯絡方式只給合作方，不公開</li>
     <li>1 至 3 個工作天完成審核</li>
   </ul>
+  <div class="proof-stats" aria-label="創作者招募進度">
+    <div class="proof-stat"><strong data-count="32">0</strong><span>已登記創作者</span><small>位</small></div>
+    <div class="proof-stat"><strong data-count="20">0</strong><span>已完成核驗</span><small>位</small></div>
+  </div>
 </div>
 
 <section id="get"><div class="wrap">
@@ -230,5 +234,24 @@
   </div>
   <p class="fine">© 2026 ThreadsKOL 台灣</p>
 </div></footer>
+<script>
+(function () {
+  const counters = document.querySelectorAll('[data-count]');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  counters.forEach((el) => {
+    const target = Number(el.dataset.count);
+    if (reduced) { el.textContent = target; return; }
+    const started = performance.now();
+    const duration = 1000;
+    function tick(now) {
+      const progress = Math.min((now - started) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(target * eased);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+})();
+</script>
 </body>
 </html>

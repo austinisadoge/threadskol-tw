@@ -25,6 +25,11 @@ h1{font-size:clamp(30px,5.4vw,52px);line-height:1.18;letter-spacing:-.02em;margi
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .pills{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;padding:0;list-style:none;color:var(--muted);font-size:14px}
 .pills li::before{content:"✓ ";color:var(--ok);font-weight:800}
+.proof-stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.proof-stat{display:flex;align-items:baseline;gap:7px;padding:10px 16px;border:1px solid var(--line);border-radius:999px;background:var(--soft)}
+.proof-stat strong{font-size:28px;line-height:1;letter-spacing:-.04em}
+.proof-stat span{color:var(--muted);font-size:14px}
+.proof-stat small{color:var(--muted);font-size:13px}
 section{padding-block:56px;border-top:1px solid var(--line)}
 h2{font-size:clamp(24px,3.4vw,34px);letter-spacing:-.02em;line-height:1.25;margin:6px 0 10px;font-weight:800}
 .sub{color:var(--muted);max-width:640px;margin:0 0 30px}
