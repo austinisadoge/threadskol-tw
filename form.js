@@ -5,6 +5,16 @@
   const ENDPOINT = 'https://threadskol-api.vercel.app/api/submit';
   document.querySelectorAll('form[data-netlify]').forEach((form) => {
     form.addEventListener('submit', async (e) => {
+      const topicInputs = [...form.querySelectorAll('input[name="topics"]')];
+      if (topicInputs.length) {
+        const hasTopic = topicInputs.some((input) => input.checked);
+        topicInputs[0].setCustomValidity(hasTopic ? '' : '請至少選擇一個內容領域');
+        if (!hasTopic) {
+          e.preventDefault();
+          form.reportValidity();
+          return;
+        }
+      }
       e.preventDefault();
       const btn = form.querySelector('button[type=submit]');
       const orig = btn.textContent;
@@ -41,5 +51,11 @@
         btn.disabled = false; btn.textContent = orig;
       }
     });
+    const topicInputs = [...form.querySelectorAll('input[name="topics"]')];
+    if (topicInputs.length) {
+      topicInputs.forEach((input) => input.addEventListener('change', () => {
+        topicInputs[0].setCustomValidity(topicInputs.some((item) => item.checked) ? '' : '請至少選擇一個內容領域');
+      }));
+    }
   });
 })();
